@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# script to install zsh
+# Script to install zsh
 
 set -e
 
@@ -13,6 +13,20 @@ else
 	echo "zsh is already installed."
 fi
 
-# install oh-my-zsh
-echo "Installing oh-my-zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+# Check if oh-my-zsh is present
+if [ -d $HOME/.oh-my-zsh ];
+then
+	echo "oh-my-zsh is present locally. Skipping installation of oh-my-zsh."
+else
+	# Install oh-my-zsh
+	echo "Installing oh-my-zsh..."
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+	source ~/.zshrc
+
+	echo "Installing plugins..."
+
+	echo "Installing syntax highlighting"
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH/custom/plugins/zsh-syntax-highlighting
+fi
+
