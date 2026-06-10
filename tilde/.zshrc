@@ -1,3 +1,5 @@
+source $HOME/dotfiles/zsh/aliases.zsh
+
 # Path to the oh-my-zsh directory
 export ZSH="$HOME/.oh-my-zsh"
 
