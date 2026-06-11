@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
+# usage:
+# curl -L  https://raw.githubusercontent.com/mboto863/dotfiles/atlantic/bootstrap.sh > x && chmod +x && sudo ./x
 
- 
-set -e
+
+# user variables
+export $ME='mboto'
+
+# script variables
+MYHOME="/home/$ME"
+ASME="sudo -u $ME"
 
 # helper functions
 function _echo() { printf "\n╓───── %s \n╙────────────────────────────────────── ─ ─ \n" "$1"; }
@@ -18,3 +25,10 @@ sudo dnf update &&
 	stow \
 	zsh \
 	zsh-syntax-highlighting
+
+# i do not want this dirs to be symlinks
+_echo "creating directory skeletons"
+$ASME mkdir -p \
+	$MYHOME/.{config,local} \
+	$MYHOME/.local/{bin,docs,cache,lib,share,src,state} \
+	$MYHOME/.local/state/zsh
