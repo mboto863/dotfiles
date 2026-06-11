@@ -32,3 +32,8 @@ $ASME mkdir -p \
 	$MYHOME/.{config,local} \
 	$MYHOME/.local/{bin,docs,cache,lib,share,src,state} \
 	$MYHOME/.local/state/zsh
+
+_echo "setting up dotfiles"
+$ASME git clone git@github.com:mboto863/dotfiles.git $MYHOME/.local/src/dotfiles &&
+	cd $MYHOME/.local/src/dotfiles &&
+	$ASME stow zsh -t $MYHOME
