@@ -1,6 +1,6 @@
 Manually:
 
-/etc/zshenv should set the environment variables XDG_CONFIG_HOME and ZDOTDIR
+`/etc/zshenv` should set the environment variables `XDG_CONFIG_HOME` and `ZDOTDIR`
 ```
 if [ -z "$XDG_CONFIG_HOME" ]
 then
