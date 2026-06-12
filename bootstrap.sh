@@ -4,13 +4,13 @@
 
 
 # user variables
-export $ME='mboto'
+#export $ME='mboto'
 
 # script variables
-MYHOME="/home/$ME"
+#MYHOME="/home/$ME"
 
 # Usage of this requires a temp user with root privileges, to be authenticated with 1password, which is then forgotten in teardown. Check xero/dotfiles/setup.git.
-ASME="sudo -u $ME"
+#ASME="sudo -u $ME"
 
 # helper functions
 function _echo() { printf "\n╓───── %s \n╙────────────────────────────────────── ─ ─ \n" "$1"; }
@@ -28,14 +28,16 @@ sudo dnf update &&
 	zsh \
 	zsh-syntax-highlighting
 
+sudo chsh -s $(which zsh)
+
 # i do not want this dirs to be symlinks
 _echo "creating directory skeletons"
-$ASME mkdir -p \
-	$MYHOME/.{config,local} \
-	$MYHOME/.local/{bin,docs,cache,lib,share,src,state} \
-	$MYHOME/.local/state/zsh
+mkdir -p \
+	$HOME/.{config,local,cache} \
+	$HOME/.local/{bin,share,state}  &&
+	stow zsh -t $HOME
 
-_echo "setting up dotfiles"
-$ASME git clone git@github.com:mboto863/dotfiles.git $MYHOME/.local/src/dotfiles &&
-	cd $MYHOME/.local/src/dotfiles &&
-	$ASME stow zsh -t $MYHOME
+#_echo "setting up dotfiles"
+#ASME git clone git@github.com:mboto863/dotfiles.git $MYHOME/.local/src/dotfiles &&
+#	cd $MYHOME/.local/src/dotfiles &&
+#	$ASME stow zsh -t $MYHOME
