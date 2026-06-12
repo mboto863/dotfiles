@@ -24,6 +24,7 @@ sudo dnf update &&
 	python3 \
 	python3-pip \
 	python3-venv \
+	poetry \
 	stow \
 	zsh \
 	zsh-syntax-highlighting
