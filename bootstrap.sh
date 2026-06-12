@@ -8,6 +8,8 @@ export $ME='mboto'
 
 # script variables
 MYHOME="/home/$ME"
+
+# Usage of this requires a temp user with root privileges, to be authenticated with 1password, which is then forgotten in teardown. Check xero/dotfiles/setup.git.
 ASME="sudo -u $ME"
 
 # helper functions
