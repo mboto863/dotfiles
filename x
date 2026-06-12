@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # usage:
-# curl -L  https://raw.githubusercontent.com/mboto863/dotfiles/atlantic/bootstrap.sh > x && chmod +x x && sudo ./x
+# curl -L  https://raw.githubusercontent.com/mboto863/dotfiles/atlantic/bootstrap.sh > x && chmod +x && sudo ./x
 
 
 # user variables
