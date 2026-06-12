@@ -40,3 +40,6 @@ zstyle ':completion:*' menu select
 # Make completion case-insensitive
 # Example: "doc" can complete to "Documents"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# Set editing mode for interactive use.
+bindkey -v
