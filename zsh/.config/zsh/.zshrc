@@ -1,6 +1,6 @@
-source $HOME/dotfiles/atlantic/zsh/.config/zsh/aliases.zsh
-source $HOME/dotfiles/atlantic/zsh/.config/zsh/syntax.zsh
-
+source $HOME/.config/zsh/aliases.zsh
+source $HOME/.config/zsh/syntax.zsh
+source $HOME/.config/zsh/functions.zsh
 # =========================================================
 # History
 # =========================================================
