@@ -43,3 +43,10 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Set editing mode for interactive use.
 bindkey -v
+
+# Run on directory change
+autoload -U add-zsh-hook
+add-zsh-hook chpwd _auto_poetry_activate
+
+# Run on inital shell launch
+_auto_poetry_activate
