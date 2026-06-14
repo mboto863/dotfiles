@@ -24,7 +24,7 @@ sudo dnf update &&
 	python3 \
 	python3-pip \
 	python3-venv \
-	poetry \
+	pipx \
 	stow \
 	zsh \
 	zsh-syntax-highlighting
@@ -35,8 +35,7 @@ sudo chsh -s $(which zsh)
 _echo "creating directory skeletons"
 mkdir -p \
 	$HOME/.{config,local,cache} \
-	$HOME/.local/{bin,share,state}  &&
-	stow zsh -t $HOME
+	$HOME/.local/{bin,share,state}
 
 #_echo "setting up dotfiles"
 #ASME git clone git@github.com:mboto863/dotfiles.git $MYHOME/.local/src/dotfiles &&
