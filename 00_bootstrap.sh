@@ -30,7 +30,7 @@ sudo dnf update &&
 
 sudo chsh -s $(which zsh) $(whoami)
 
-# i do not want this dirs to be symlinks
+# i do not want these dirs to be symlinks
 _echo "creating directory skeletons"
 mkdir -p \
 	$HOME/.{config,local,cache} \
