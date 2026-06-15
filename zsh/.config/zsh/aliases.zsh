@@ -2,4 +2,5 @@
 alias g="git"
 alias gs="git status -sb"
 alias ga="git add"
+alias gp="git push"
 alias gcm="git commit -m"
