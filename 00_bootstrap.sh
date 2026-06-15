@@ -23,13 +23,12 @@ sudo dnf update &&
 	git \
 	python3 \
 	python3-pip \
-	python3-venv \
 	stow \
 	zsh \
 	zsh-syntax-highlighting \
 	tmux
 
-sudo chsh -s $(which zsh)
+sudo chsh -s $(which zsh) $(whoami)
 
 # i do not want this dirs to be symlinks
 _echo "creating directory skeletons"
