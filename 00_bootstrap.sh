@@ -26,7 +26,8 @@ sudo dnf update &&
 	python3-venv \
 	stow \
 	zsh \
-	zsh-syntax-highlighting
+	zsh-syntax-highlighting \
+	tmux
 
 sudo chsh -s $(which zsh)
 
