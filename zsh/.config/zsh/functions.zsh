@@ -5,12 +5,10 @@ function l() {
 		| sed -e 's/^\(....\) [[:digit:]] /\1 /'
 }
 
-# Automatically activate Poetry virtual environments
-function _auto_poetry_activate() {
-	if [ -f "pyproject.toml" ]; then
-		# Check if a poetry env actually exists for this project
-	  	if poetry env info --path > /dev/null 2>&1; then
-			source "$(poetry env info --path)/bin/activate"
-		fi
+function _activate_env() {
+	if [[ -d .venv ]]; then
+		source .venv/bin/activate
+	elif [[ -d venv ]]; then
+		source venv/bin/activate
 	fi
 }

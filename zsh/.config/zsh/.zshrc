@@ -46,7 +46,7 @@ bindkey -v
 
 # Run on directory change
 autoload -U add-zsh-hook
-add-zsh-hook chpwd _auto_poetry_activate
+add-zsh-hook chpwd _activate_env
 
 # Run on inital shell launch
-_auto_poetry_activate
+_activate_env
