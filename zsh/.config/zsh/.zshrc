@@ -50,3 +50,6 @@ add-zsh-hook chpwd _activate_env
 
 # Run on inital shell launch
 _activate_env
+
+# Autoload runpy function.
+autoload -Uz runpy
