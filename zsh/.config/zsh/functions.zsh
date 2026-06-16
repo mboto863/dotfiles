@@ -32,7 +32,7 @@ function runpy() {
   fi
 }
 
-# Run this as: pytrack app.log
+# Run this as: pytrack logs_filename
 pytrack() {
     local log_file=${1:-".logs"}
 
