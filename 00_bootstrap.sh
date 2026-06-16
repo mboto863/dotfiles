@@ -33,8 +33,8 @@ sudo chsh -s $(which zsh) $(whoami)
 # i do not want these dirs to be symlinks
 _echo "creating directory skeletons"
 mkdir -p \
-	$HOME/.{config,local,cache} \
-	$HOME/.local/{bin,share,state}
+	"$HOME"/.{config,local,cache} \
+	"$HOME"/.local/{bin,share,state}
 
 #_echo "setting up dotfiles"
 #ASME git clone git@github.com:mboto863/dotfiles.git $MYHOME/.local/src/dotfiles &&
