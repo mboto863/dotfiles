@@ -5,6 +5,9 @@ function l() {
     | sed -e 's/^\(....\) [[:digit:]] /\1 /'
 }
 
+# =========================================================
+# Python
+# =========================================================
 function _activate_env() {
   if [[ -d .venv ]]; then
     source .venv/bin/activate
@@ -27,4 +30,20 @@ function runpy() {
       echo "No .py files found"
     fi
   fi
+}
+
+# Run this as: pytrack app.log
+pytrack() {
+    local log_file=${1:-".logs"}
+
+    # Touch the file to ensure it exists before tailing.
+    touch "$log_file"
+
+    # Split horizontally, give 30% space to the bottom pane, and run the watch command
+    # Using 'less +F' allows one to scroll backward and resume watching with keybindings.
+    tmux split-window -v -p 30 \
+    "tail -f $log_file | grep --line-buffered \".\" | less"
+
+    # Keep focus on the shell pane.
+    tmux select-pane -t :.-
 }

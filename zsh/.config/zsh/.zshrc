@@ -52,4 +52,4 @@ add-zsh-hook chpwd _activate_env
 _activate_env
 
 # Autoload runpy function.
-autoload -Uz runpy
+autoload -Uz runpy pytrack
