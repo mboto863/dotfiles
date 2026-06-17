@@ -1,0 +1,10 @@
+#!/bin/bash
+# bin/tmux-spark
+
+SESSION="spark-exploration"
+
+# Start a new detached tmux session
+tmux new-session -d -s $SESSION -n "PySpark"
+
+# Pane 1 (Left): Launch the interactive PySpark shell
+tmux send-keys -t $SESSION:0.1 "uv run pyspark" C-m
