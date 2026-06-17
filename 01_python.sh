@@ -4,10 +4,18 @@
 
 # Install uv and set the global virtual environment
 curl -LsSf https://astral.sh/uv/install.sh | sh
-uv venv
 
 # =========================================================
 # Spark
 # =========================================================
-sudo dnf install -y java-latest-openjdk
+
+# Spark runs on Java 8/11
+# dnf does not have this version. Install the Adoptium Temurin Java Repository.
+sudo dnf install adoptium-temurin-java-repository
+# Enable third party repos.
+sudo fedora-third-party enable
+# Install jdk 11.
+sudo dnf install temurin-11-jdk
+
 uv pip install pyspark
+

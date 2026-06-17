@@ -23,3 +23,7 @@ export PYSPARK_DRIVER_PYTHON="ipython"
 
 # Clean IPython.
 export PYSPARK_DRIVER_PYTHON_OPTS="--no-banner"
+
+# Add Java runtime path to the environment.
+# Dynamically find the system Java path.
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::")
