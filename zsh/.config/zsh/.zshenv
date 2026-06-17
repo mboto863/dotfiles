@@ -12,4 +12,14 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export PATH="$HOME/.local/bin:$PATH"
 
 # ---------------------------------------------------------
-export EDITOR="vim"
+export EDITOR="code --wait"
+
+# =========================================================
+# PySpark
+# =========================================================
+
+# Tell PySpark to use IPython as its driver.
+export PYSPARK_DRIVER_PYTHON="ipython"
+
+# Clean IPython.
+export PYSPARK_DRIVER_PYTHON_OPTS="--no-banner"
