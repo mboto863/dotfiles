@@ -1,10 +1,11 @@
+#!/usr/bin/env bash
+
 # Python setup
 
-# Install poetry.
-if [ -v pipx > /dev/null ]; then
-	pipx poetry
-fi
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
-if [ -v poetry > /dev/null ]; then
-	poetry completions zsh > "$ZDOTDIR/completions/_poetry"
-fi
+# =========================================================
+# Spark
+# =========================================================
+sudo dnf install -y java-latest-openjdk
