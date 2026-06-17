@@ -9,13 +9,10 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 # Spark
 # =========================================================
 
-# Spark runs on Java 8/11
+# Spark runs on Java 17/21
 # dnf does not have this version. Install the Adoptium Temurin Java Repository.
 sudo dnf install adoptium-temurin-java-repository
 # Enable third party repos.
 sudo fedora-third-party enable
-# Install jdk 11.
-sudo dnf install temurin-11-jdk
-
-uv pip install pyspark
-
+# Install jdk 17.
+sudo dnf install temurin-17-jdk
