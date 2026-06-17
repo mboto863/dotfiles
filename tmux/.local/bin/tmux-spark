@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # bin/tmux-spark
 
 SESSION="spark-exploration"
@@ -7,4 +7,4 @@ SESSION="spark-exploration"
 tmux new-session -d -s $SESSION -n "PySpark"
 
 # Pane 1 (Left): Launch the interactive PySpark shell
-tmux send-keys -t $SESSION:0.1 "uv run pyspark" C-m
+tmux send-keys -t $SESSION:0.0 "uv run pyspark" C-m

@@ -53,4 +53,6 @@ _activate_env
 
 # Autoload runpy function.
 autoload -Uz runpy pytrack
+
+# Added by uv.
 . "$HOME/.local/share/../bin/env"
