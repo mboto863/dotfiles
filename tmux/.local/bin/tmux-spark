@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # bin/tmux-spark
 
-SESSION="spark-workspace"
+SESSION="Spark"
 
-# Start a new detached tmux session
-tmux new-session -d -s $SESSION
+# Start a new detached tmux session and name the first window "pyspark"
+tmux new-session -d -s $SESSION -n "Shell"
 
-# Pane 1 (Left): PySpark shell.
-tmux send-keys -t $SESSION:0.0 "uv run pyspark" C-m
+# Window 1:  PySpark shell.
+tmux send-keys -t $SESSION:Shell "uv run pyspark" C-m
 
-# Split the window horizontally.
-tmux split-window -h -t $SESSION:0.0 -p 35
+# Window 2: Monitor
+tmux new-window -t $SESSION -n "Monitor"
+tmux send-keys -t $SESSION:Monitor "btop" C-m
 
-# Pane 2 (Top Right): Resource monitor to watch RAM/CPU
-
+tmux select-window -t $SESSION:Shell
