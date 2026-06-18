@@ -26,7 +26,8 @@ sudo dnf update &&
 	stow \
 	zsh \
 	zsh-syntax-highlighting \
-	tmux
+	tmux \
+    btop
 
 sudo chsh -s $(which zsh) $(whoami)
 
