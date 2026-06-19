@@ -27,8 +27,21 @@ sudo dnf update &&
 	zsh \
 	zsh-syntax-highlighting \
 	tmux \
-    btop
+        btop
 
+# =============================================================================
+# BROOT
+# =============================================================================
+
+# broot dependencies
+# Install the rust development environment
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh     
+# Other dependencies.
+sudo dnf install libxcb make automake gcc gcc-c++ kernel-devel -y
+# Install broot via cargo, with clipboard features.
+cargo install --locked --features clipboard broot 
+
+# Change default shell to zsh.
 sudo chsh -s $(which zsh) $(whoami)
 
 # i do not want these dirs to be symlinks
