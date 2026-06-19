@@ -56,3 +56,5 @@ autoload -Uz runpy pytrack
 
 # Added by uv.
 . "$HOME/.local/share/../bin/env"
+
+source "$HOME/.config/broot/launcher/bash/br"
