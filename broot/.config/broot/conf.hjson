@@ -53,8 +53,8 @@
 #
 # You may start either in 'command' mode, or in 'input' mode
 #
-# modal: true
-# initial_mode: command
+modal: true
+initial_mode: command
 
 ###############################################################
 # Whether to mark the selected line with a triangle
@@ -302,7 +302,6 @@ imports: [
     {
         luma: light
         # (un)comment to choose your preferred skin
-        //file: skins/solarized-light.hjson
-        file: skins/white.hjson
+        file: skins/solarized-light.hjson
     }
 ]

@@ -12,7 +12,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export PATH="$HOME/.local/bin:$PATH"
 
 # ---------------------------------------------------------
-export EDITOR="code --wait"
+export EDITOR="vim"
 
 # =========================================================
 # PySpark
