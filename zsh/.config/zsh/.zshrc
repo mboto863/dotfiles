@@ -61,11 +61,12 @@ source "$HOME/.config/broot/launcher/bash/br"
 
 # Load the Version Control System into the prompt.
 autoload -Uz vcs_info
-precmd() { vcs_info }
 
 # VCS is git.
-zstyle ':vcs_info:git:*' formats '%b'
+zstyle ':vcs_info:git:*' formats "%S "
+
+precmd() { vcs_info }
 
 # Substitute the prompt.
 setopt PROMPT_SUBST
-PROMPT='%F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+PROMPT='${vcs_info_msg_0_}%# '
