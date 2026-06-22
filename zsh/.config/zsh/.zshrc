@@ -63,7 +63,7 @@ source "$HOME/.config/broot/launcher/bash/br"
 autoload -Uz vcs_info
 
 # VCS is git.
-zstyle ':vcs_info:git:*' formats "%S "
+zstyle ':vcs_info:git:*' formats "(%r)%S "
 
 precmd() { vcs_info }
 
