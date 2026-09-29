@@ -1,0 +1,13 @@
+# Enable Python LSP + Linter (Pyright + Ruff)
+[[language]]
+name = "python"
+language-servers = ["pyright", "ruff"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+# Enable SQL LSP for editing queries
+[[language]]
+name = "sql"
+language-servers = ["sqls"]
