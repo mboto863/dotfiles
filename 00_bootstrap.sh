@@ -27,7 +27,8 @@ sudo dnf update &&
 	zsh \
 	zsh-syntax-highlighting \
 	tmux \
-        btop
+  btop \
+  fzf
 
 # =============================================================================
 # BROOT

@@ -8,6 +8,18 @@ function l() {
 # =============================================================================
 # Notes
 # =============================================================================
+
+# Open or create today's daily note.
+nd() {
+  mkdir -p "$NOTES_DIR/daily"  
+  local file="$NOTES_DIR/daily/$(date +%F).md"
+  if [[ ! -f "$file" ]]; then
+    printf "# %s\n\n" "$(date +%F)" > "$file"
+  fi
+  "$EDITOR" "$file"
+} 
+
+# Create or open a named note in $NOTES_DIR.
 n() {
   mkdir -p "$NOTES_DIR" # aliases.zsh is already sourced at this point.
   if [[ $# -eq 0 ]]; then
@@ -18,6 +30,25 @@ n() {
   local slug="${*// /-}" 
   local file="$NOTES_DIR/${slug}.md"
   "$EDITOR" "$file"
+}
+
+# Ripgrep search across notes and open the match in Helix at line number.
+ng() {
+  local match=$(
+    rg \
+      --line-number \
+      --no-heading \
+      --smart-case \
+      "${*:-}" \
+      "$NOTES_DIR" \
+    | fzf \
+      --delimiter=: \
+      --preview 'bat --style=numbers --color=always --highlight-line {2} {1}'
+  ) || return
+  local file="${match%%:*}"
+  local rest="${match#*:}"
+  local line="${rest%%:*}"
+  "$EDITOR" "${file}:${line}"
 }
 
 # =========================================================
