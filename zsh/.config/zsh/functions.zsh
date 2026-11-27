@@ -5,6 +5,21 @@ function l() {
     | sed -e 's/^\(....\) [[:digit:]] /\1 /'
 }
 
+# =============================================================================
+# Notes
+# =============================================================================
+n() {
+  mkdir -p "$NOTES_DIR" # aliases.zsh is already sourced at this point.
+  if [[ $# -eq 0 ]]; then
+    "$EDITOR" "$NOTES_DIR"
+    return
+  fi
+  # file name is passed.
+  local slug="${*// /-}" 
+  local file="$NOTES_DIR/${slug}.md"
+  "$EDITOR" "$file"
+}
+
 # =========================================================
 # Python
 # =========================================================
