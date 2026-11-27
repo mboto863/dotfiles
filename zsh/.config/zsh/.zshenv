@@ -11,8 +11,9 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # Personal binaries/scripts
 export PATH="$HOME/.local/bin:$PATH"
 
-# ---------------------------------------------------------
-export EDITOR="vim"
+# -----------------Editor and notes directory --------------
+export EDITOR="hx"
+export NOTES_DIR="$HOME/notes"
 
 # =========================================================
 # PySpark
